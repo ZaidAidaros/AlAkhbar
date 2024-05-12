@@ -40,6 +40,6 @@ const dbConfig = {
   },
 };
 const getDBConfig = function(mode){
-  return dbConfig[mode];
+  return dbConfig[mode || "test"];
 }
 module.exports = getDBConfig;

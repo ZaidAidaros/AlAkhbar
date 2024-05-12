@@ -4,9 +4,9 @@ const { Sequelize, DataTypes, Model, json } = require("sequelize");
 const { config } = require("dotenv");
 config();
 
-const config = getDBConfig(process.env.MODE);
-console.log(config);
-const sequelize = new Sequelize(config);
+const dbconfig = getDBConfig(process.env.MODE);
+console.log(process.env.MODE,dbconfig);
+const sequelize = new Sequelize(dbconfig);
 
 const db = {};
 db.sequelize = sequelize;
