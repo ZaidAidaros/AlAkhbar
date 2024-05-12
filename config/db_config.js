@@ -4,7 +4,7 @@ const dbConfig = {
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
-    dialect: 'mysql',
+    dialect: process.env.DB_DIALECT,
     dialectOptions: {
       ssl: {
         require: true,
@@ -17,7 +17,7 @@ const dbConfig = {
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
-    dialect: 'postgres',
+    dialect: process.env.DB_DIALECT,
     dialectOptions: {
       ssl: {
         require: true,
@@ -39,7 +39,5 @@ const dbConfig = {
     }
   },
 };
-const getDBConfig = function(mode){
-  return dbConfig[mode || "test"];
-}
-module.exports = getDBConfig;
+
+module.exports = dbConfig;
