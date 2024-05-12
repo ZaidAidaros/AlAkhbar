@@ -1,12 +1,9 @@
-const getDBConfig = require("../config/db_config.js");
+const dbConfig = require("../config/db_config.js");
 const initAdminUser = require("../config/init_db.js");
 const { Sequelize, DataTypes, Model, json } = require("sequelize");
-const { config } = require("dotenv");
-config();
 
-const dbconfig = getDBConfig(process.env.MODE);
-console.log(process.env.MODE,dbconfig);
-const sequelize = new Sequelize(dbconfig);
+console.log(dbConfig);
+const sequelize = new Sequelize(dbConfig);
 
 const db = {};
 db.sequelize = sequelize;
