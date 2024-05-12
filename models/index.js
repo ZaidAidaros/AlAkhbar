@@ -90,7 +90,7 @@ sequelize
   .then(() => {
     console.log("************DB Authenticated************");
     console.log("***Start Sync DB***");
-    sequelize.sync({force:true, logging:false}).then(()=>{
+    sequelize.sync({logging:false}).then(()=>{
       initAdminUser(db);
       console.log("***DB Sync Finsh***");
     });
