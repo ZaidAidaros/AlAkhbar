@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+// const cors = require("cors");
 const { config } = require("dotenv");
 const cookieParser = require("cookie-parser");
 const path = require('path');
@@ -21,8 +21,8 @@ const userRoutes = require("./routes/userRoutes");
 const writterRoutes = require("./routes/writterRoutes");
 const homeRoutes = require("./routes/homeRoutes");
 // Uses
-const orgPort = 3000
-app.use(cors({ origin: "http://localhost:"+orgPort, credentials: true }));
+// const orgPort = 3000
+// app.use(cors({ origin: "http://localhost:"+orgPort, credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
