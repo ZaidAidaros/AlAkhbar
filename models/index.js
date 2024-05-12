@@ -110,5 +110,5 @@ sequelize.sync({logging:false}).then(()=>{
   console.log("***DB Sync Finsh***");
 });
 console.log("********************************");
-db.User.update({email:"admin@admin.com"},{where: {Id:1}});
+
 module.exports = db;
