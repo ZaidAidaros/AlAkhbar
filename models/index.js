@@ -2,7 +2,7 @@ const dbConfig = require("../config/db_config.js");
 const initAdminUser = require("../config/init_db.js");
 const { Sequelize, DataTypes, Model, json } = require("sequelize");
 
-console.log(dbConfig[process.env.MODE]);
+
 const sequelize = new Sequelize(dbConfig[process.env.MODE]);
 
 const db = {};
