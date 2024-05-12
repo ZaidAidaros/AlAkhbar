@@ -19,101 +19,101 @@
     "file": "assets/VWindowItem-38cf7c32.css",
     "src": "VWindowItem.css"
   },
-  "_ArticleComp-c7ec9649.js": {
-    "file": "assets/ArticleComp-c7ec9649.js",
+  "_ArticleComp-f03d2937.js": {
+    "file": "assets/ArticleComp-f03d2937.js",
     "imports": [
-      "_writterController-5201010d.js",
+      "_writterController-d2744327.js",
       "index.html",
-      "_BookMark-5181d7c9.js"
+      "_BookMark-5ea6f48d.js"
     ]
   },
-  "_BookMark-5181d7c9.js": {
+  "_BookMark-5ea6f48d.js": {
     "css": [
       "assets/BookMark-ff7b90ba.css"
     ],
-    "file": "assets/BookMark-5181d7c9.js",
+    "file": "assets/BookMark-5ea6f48d.js",
     "imports": [
       "index.html"
     ]
   },
-  "_LoadingAndErrorSc-2f4ab5fb.js": {
-    "file": "assets/LoadingAndErrorSc-2f4ab5fb.js",
+  "_LoadingAndErrorSc-5ed1fd4b.js": {
+    "file": "assets/LoadingAndErrorSc-5ed1fd4b.js",
     "imports": [
       "index.html"
     ]
   },
-  "_VCheckbox-a3894c96.js": {
+  "_VCheckbox-3ab37eeb.js": {
     "css": [
       "assets/VCheckbox-9646c90e.css"
     ],
-    "file": "assets/VCheckbox-a3894c96.js",
+    "file": "assets/VCheckbox-3ab37eeb.js",
     "imports": [
       "index.html"
     ]
   },
-  "_VContainer-1d22aa7d.js": {
-    "file": "assets/VContainer-1d22aa7d.js",
+  "_VContainer-6ed44380.js": {
+    "file": "assets/VContainer-6ed44380.js",
     "imports": [
       "index.html"
     ]
   },
-  "_VMenu-004b703c.js": {
+  "_VMenu-ab20e386.js": {
     "css": [
       "assets/VMenu-68899fac.css"
     ],
-    "file": "assets/VMenu-004b703c.js",
+    "file": "assets/VMenu-ab20e386.js",
     "imports": [
       "index.html",
-      "_VVirtualScroll-bf8a3f7d.js",
-      "_lazy-7186a0d1.js"
+      "_VVirtualScroll-2336ca3a.js",
+      "_lazy-f8fb8ca4.js"
     ]
   },
-  "_VVirtualScroll-bf8a3f7d.js": {
+  "_VVirtualScroll-2336ca3a.js": {
     "css": [
       "assets/VVirtualScroll-419dd3f6.css"
     ],
-    "file": "assets/VVirtualScroll-bf8a3f7d.js",
+    "file": "assets/VVirtualScroll-2336ca3a.js",
     "imports": [
       "index.html"
     ]
   },
-  "_VWindowItem-4c40b3b8.js": {
+  "_VWindowItem-d4467033.js": {
     "css": [
       "assets/VWindowItem-38cf7c32.css"
     ],
-    "file": "assets/VWindowItem-4c40b3b8.js",
+    "file": "assets/VWindowItem-d4467033.js",
     "imports": [
       "index.html",
-      "_lazy-7186a0d1.js"
+      "_lazy-f8fb8ca4.js"
     ]
   },
-  "_WritterComp-25a58d75.js": {
-    "file": "assets/WritterComp-25a58d75.js",
+  "_WritterComp-cb5e4b6a.js": {
+    "file": "assets/WritterComp-cb5e4b6a.js",
     "imports": [
-      "_adminController-2c375c65.js",
+      "_adminController-cd619af3.js",
       "index.html"
     ]
   },
-  "_adminController-2c375c65.js": {
-    "file": "assets/adminController-2c375c65.js",
-    "imports": [
-      "index.html"
-    ]
-  },
-  "_authController-fcbce260.js": {
-    "file": "assets/authController-fcbce260.js",
+  "_adminController-cd619af3.js": {
+    "file": "assets/adminController-cd619af3.js",
     "imports": [
       "index.html"
     ]
   },
-  "_lazy-7186a0d1.js": {
-    "file": "assets/lazy-7186a0d1.js",
+  "_authController-406ef720.js": {
+    "file": "assets/authController-406ef720.js",
     "imports": [
       "index.html"
     ]
   },
-  "_writterController-5201010d.js": {
-    "file": "assets/writterController-5201010d.js",
+  "_lazy-f8fb8ca4.js": {
+    "file": "assets/lazy-f8fb8ca4.js",
+    "imports": [
+      "index.html"
+    ]
+  },
+  "_writterController-d2744327.js": {
+    "file": "assets/writterController-d2744327.js",
     "imports": [
       "index.html"
     ]
@@ -155,7 +155,7 @@
       "src/views/About.vue",
       "src/views/NotFound.vue"
     ],
-    "file": "assets/index-50d0d424.js",
+    "file": "assets/index-cef20696.js",
     "isEntry": true,
     "src": "index.html"
   },
@@ -180,17 +180,17 @@
     "src": "src/assets/logo.png"
   },
   "src/components/article/ArticlePage.vue": {
-    "file": "assets/ArticlePage-e3cbf9ce.js",
+    "file": "assets/ArticlePage-5d823ea3.js",
     "imports": [
       "index.html",
-      "_BookMark-5181d7c9.js",
-      "_VVirtualScroll-bf8a3f7d.js"
+      "_BookMark-5ea6f48d.js",
+      "_VVirtualScroll-2336ca3a.js"
     ],
     "isDynamicEntry": true,
     "src": "src/components/article/ArticlePage.vue"
   },
   "src/views/About.vue": {
-    "file": "assets/About-54fc1723.js",
+    "file": "assets/About-d400be67.js",
     "imports": [
       "index.html"
     ],
@@ -198,7 +198,7 @@
     "src": "src/views/About.vue"
   },
   "src/views/NotFound.vue": {
-    "file": "assets/NotFound-446a19ce.js",
+    "file": "assets/NotFound-6b5f8d15.js",
     "imports": [
       "index.html"
     ],
@@ -206,32 +206,32 @@
     "src": "src/views/NotFound.vue"
   },
   "src/views/auth/LogIn.vue": {
-    "file": "assets/LogIn-c4e84e54.js",
+    "file": "assets/LogIn-7be0d607.js",
     "imports": [
       "index.html",
-      "_authController-fcbce260.js",
-      "_VCheckbox-a3894c96.js",
-      "_VContainer-1d22aa7d.js"
+      "_authController-406ef720.js",
+      "_VCheckbox-3ab37eeb.js",
+      "_VContainer-6ed44380.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/auth/LogIn.vue"
   },
   "src/views/auth/RestPassword.vue": {
-    "file": "assets/RestPassword-059da710.js",
+    "file": "assets/RestPassword-ddc0cef0.js",
     "imports": [
       "index.html",
-      "_authController-fcbce260.js"
+      "_authController-406ef720.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/auth/RestPassword.vue"
   },
   "src/views/auth/SignUp.vue": {
-    "file": "assets/SignUp-a707116b.js",
+    "file": "assets/SignUp-e585f0a1.js",
     "imports": [
       "index.html",
-      "_authController-fcbce260.js",
-      "_VCheckbox-a3894c96.js",
-      "_VContainer-1d22aa7d.js"
+      "_authController-406ef720.js",
+      "_VCheckbox-3ab37eeb.js",
+      "_VContainer-6ed44380.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/auth/SignUp.vue"
@@ -244,124 +244,124 @@
     "css": [
       "assets/Home-834187b8.css"
     ],
-    "file": "assets/Home-bb970ea0.js",
+    "file": "assets/Home-d799fb1b.js",
     "imports": [
       "index.html",
-      "_ArticleComp-c7ec9649.js",
-      "_LoadingAndErrorSc-2f4ab5fb.js",
-      "_VVirtualScroll-bf8a3f7d.js",
-      "_VWindowItem-4c40b3b8.js",
-      "_VMenu-004b703c.js",
-      "_writterController-5201010d.js",
-      "_BookMark-5181d7c9.js",
-      "_lazy-7186a0d1.js"
+      "_ArticleComp-f03d2937.js",
+      "_LoadingAndErrorSc-5ed1fd4b.js",
+      "_VVirtualScroll-2336ca3a.js",
+      "_VWindowItem-d4467033.js",
+      "_VMenu-ab20e386.js",
+      "_writterController-d2744327.js",
+      "_BookMark-5ea6f48d.js",
+      "_lazy-f8fb8ca4.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/home/Home.vue"
   },
   "src/views/management/ArticleCategoriesManage.vue": {
-    "file": "assets/ArticleCategoriesManage-58dd18de.js",
+    "file": "assets/ArticleCategoriesManage-031dcea2.js",
     "imports": [
-      "_adminController-2c375c65.js",
+      "_adminController-cd619af3.js",
       "index.html",
-      "_LoadingAndErrorSc-2f4ab5fb.js",
-      "_VVirtualScroll-bf8a3f7d.js"
+      "_LoadingAndErrorSc-5ed1fd4b.js",
+      "_VVirtualScroll-2336ca3a.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/management/ArticleCategoriesManage.vue"
   },
   "src/views/management/ArticleCategoryForm.vue": {
-    "file": "assets/ArticleCategoryForm-79abd398.js",
+    "file": "assets/ArticleCategoryForm-520a425a.js",
     "imports": [
       "index.html",
-      "_adminController-2c375c65.js"
+      "_adminController-cd619af3.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/management/ArticleCategoryForm.vue"
   },
   "src/views/management/StatictisView.vue": {
-    "file": "assets/StatictisView-0466cc79.js",
+    "file": "assets/StatictisView-e85c1f33.js",
     "imports": [
-      "_LoadingAndErrorSc-2f4ab5fb.js",
+      "_LoadingAndErrorSc-5ed1fd4b.js",
       "index.html",
-      "_adminController-2c375c65.js"
+      "_adminController-cd619af3.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/management/StatictisView.vue"
   },
   "src/views/management/UsersManage.vue": {
-    "file": "assets/UsersManage-3cee9104.js",
+    "file": "assets/UsersManage-cbdaf276.js",
     "imports": [
-      "_adminController-2c375c65.js",
-      "_LoadingAndErrorSc-2f4ab5fb.js",
-      "_WritterComp-25a58d75.js",
+      "_adminController-cd619af3.js",
+      "_LoadingAndErrorSc-5ed1fd4b.js",
+      "_WritterComp-cb5e4b6a.js",
       "index.html",
-      "_VWindowItem-4c40b3b8.js",
-      "_VVirtualScroll-bf8a3f7d.js",
-      "_lazy-7186a0d1.js"
+      "_VWindowItem-d4467033.js",
+      "_VVirtualScroll-2336ca3a.js",
+      "_lazy-f8fb8ca4.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/management/UsersManage.vue"
   },
   "src/views/management/VistersMsgs.vue": {
-    "file": "assets/VistersMsgs-41ba60e2.js",
+    "file": "assets/VistersMsgs-9938cb44.js",
     "imports": [
-      "_LoadingAndErrorSc-2f4ab5fb.js",
-      "_adminController-2c375c65.js",
+      "_LoadingAndErrorSc-5ed1fd4b.js",
+      "_adminController-cd619af3.js",
       "index.html",
-      "_VWindowItem-4c40b3b8.js",
-      "_VVirtualScroll-bf8a3f7d.js",
-      "_lazy-7186a0d1.js"
+      "_VWindowItem-d4467033.js",
+      "_VVirtualScroll-2336ca3a.js",
+      "_lazy-f8fb8ca4.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/management/VistersMsgs.vue"
   },
   "src/views/management/WArticles.vue": {
-    "file": "assets/WArticles-0959b091.js",
+    "file": "assets/WArticles-50b73dd8.js",
     "imports": [
-      "_adminController-2c375c65.js",
-      "_ArticleComp-c7ec9649.js",
-      "_LoadingAndErrorSc-2f4ab5fb.js",
+      "_adminController-cd619af3.js",
+      "_ArticleComp-f03d2937.js",
+      "_LoadingAndErrorSc-5ed1fd4b.js",
       "index.html",
-      "_VWindowItem-4c40b3b8.js",
-      "_VVirtualScroll-bf8a3f7d.js",
-      "_writterController-5201010d.js",
-      "_BookMark-5181d7c9.js",
-      "_lazy-7186a0d1.js"
+      "_VWindowItem-d4467033.js",
+      "_VVirtualScroll-2336ca3a.js",
+      "_writterController-d2744327.js",
+      "_BookMark-5ea6f48d.js",
+      "_lazy-f8fb8ca4.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/management/WArticles.vue"
   },
   "src/views/management/WrittersManage.vue": {
-    "file": "assets/WrittersManage-c888e167.js",
+    "file": "assets/WrittersManage-a9d6025c.js",
     "imports": [
-      "_adminController-2c375c65.js",
-      "_LoadingAndErrorSc-2f4ab5fb.js",
-      "_WritterComp-25a58d75.js",
+      "_adminController-cd619af3.js",
+      "_LoadingAndErrorSc-5ed1fd4b.js",
+      "_WritterComp-cb5e4b6a.js",
       "index.html",
-      "_VWindowItem-4c40b3b8.js",
-      "_VVirtualScroll-bf8a3f7d.js",
-      "_lazy-7186a0d1.js"
+      "_VWindowItem-d4467033.js",
+      "_VVirtualScroll-2336ca3a.js",
+      "_lazy-f8fb8ca4.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/management/WrittersManage.vue"
   },
   "src/views/user/UserBookMarks.vue": {
-    "file": "assets/UserBookMarks-875365f8.js",
+    "file": "assets/UserBookMarks-21606714.js",
     "imports": [
       "index.html",
-      "_ArticleComp-c7ec9649.js",
-      "_LoadingAndErrorSc-2f4ab5fb.js",
-      "_VContainer-1d22aa7d.js",
-      "_VVirtualScroll-bf8a3f7d.js",
-      "_writterController-5201010d.js",
-      "_BookMark-5181d7c9.js"
+      "_ArticleComp-f03d2937.js",
+      "_LoadingAndErrorSc-5ed1fd4b.js",
+      "_VContainer-6ed44380.js",
+      "_VVirtualScroll-2336ca3a.js",
+      "_writterController-d2744327.js",
+      "_BookMark-5ea6f48d.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/user/UserBookMarks.vue"
   },
   "src/views/user/UserInfoForm.vue": {
-    "file": "assets/UserInfoForm-418c488a.js",
+    "file": "assets/UserInfoForm-e711a56a.js",
     "imports": [
       "index.html"
     ],
@@ -369,19 +369,19 @@
     "src": "src/views/user/UserInfoForm.vue"
   },
   "src/views/user/UserProfile.vue": {
-    "file": "assets/UserProfile-1c0af6ad.js",
+    "file": "assets/UserProfile-ae67a862.js",
     "imports": [
-      "_LoadingAndErrorSc-2f4ab5fb.js",
+      "_LoadingAndErrorSc-5ed1fd4b.js",
       "index.html"
     ],
     "isDynamicEntry": true,
     "src": "src/views/user/UserProfile.vue"
   },
   "src/views/user/WritterInfoForm.vue": {
-    "file": "assets/WritterInfoForm-11a9963a.js",
+    "file": "assets/WritterInfoForm-b6894df6.js",
     "imports": [
       "index.html",
-      "_VCheckbox-a3894c96.js"
+      "_VCheckbox-3ab37eeb.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/user/WritterInfoForm.vue"
@@ -394,29 +394,29 @@
     "css": [
       "assets/ArticleForm-8aa4f0a4.css"
     ],
-    "file": "assets/ArticleForm-58606bd6.js",
+    "file": "assets/ArticleForm-3dd8838f.js",
     "imports": [
       "index.html",
-      "_writterController-5201010d.js",
-      "_VMenu-004b703c.js",
-      "_VVirtualScroll-bf8a3f7d.js",
-      "_VCheckbox-a3894c96.js",
-      "_lazy-7186a0d1.js"
+      "_writterController-d2744327.js",
+      "_VMenu-ab20e386.js",
+      "_VVirtualScroll-2336ca3a.js",
+      "_VCheckbox-3ab37eeb.js",
+      "_lazy-f8fb8ca4.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/writter/ArticleForm.vue"
   },
   "src/views/writter/WritterArticles.vue": {
-    "file": "assets/WritterArticles-2f43db6e.js",
+    "file": "assets/WritterArticles-0443abb4.js",
     "imports": [
-      "_writterController-5201010d.js",
-      "_ArticleComp-c7ec9649.js",
-      "_LoadingAndErrorSc-2f4ab5fb.js",
+      "_writterController-d2744327.js",
+      "_ArticleComp-f03d2937.js",
+      "_LoadingAndErrorSc-5ed1fd4b.js",
       "index.html",
-      "_VWindowItem-4c40b3b8.js",
-      "_VVirtualScroll-bf8a3f7d.js",
-      "_BookMark-5181d7c9.js",
-      "_lazy-7186a0d1.js"
+      "_VWindowItem-d4467033.js",
+      "_VVirtualScroll-2336ca3a.js",
+      "_BookMark-5ea6f48d.js",
+      "_lazy-f8fb8ca4.js"
     ],
     "isDynamicEntry": true,
     "src": "src/views/writter/WritterArticles.vue"
