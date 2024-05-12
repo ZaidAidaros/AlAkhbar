@@ -1,6 +1,8 @@
 const getDBConfig = require("../config/db_config.js");
 const initAdminUser = require("../config/init_db.js");
 const { Sequelize, DataTypes, Model, json } = require("sequelize");
+const { config } = require("dotenv");
+config();
 
 const config = getDBConfig(process.env.MODE);
 console.log(config);
