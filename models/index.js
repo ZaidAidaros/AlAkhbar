@@ -12,6 +12,27 @@ const db = {};
 db.sequelize = sequelize;
 
 
+//////////// DB Test Connection  ///////////////////////////////////////////////////////
+console.log("************Start DB Connection************");
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log("************DB Authenticated************");
+    
+  })
+  .catch((error) => {
+    console.log("************DB Error************");
+    const code = error.parent.code;
+    const errno = error.parent.errno;
+    const syscall = error.parent.syscall;
+    console.error("Error: \n errno:"+errno+"\n code:"+code+"\n syscall:"+syscall);
+    console.log("-Check IF DB IS RUNNIG");
+    console.log("-Check Auth Info Is Correct");
+    console.log("********************************");
+    return;
+  });
+
+
 //////////// DB Tables  ///////////////////////////////////////////////////////
 db.User = require("./user.js")(sequelize, DataTypes, Model);
 
@@ -85,29 +106,12 @@ db.UserBookMark.belongsTo(db.Article);
 db.Article.hasMany(db.UserBookMark);
 
 
-//////////// DB Connection, Sync  ///////////////////////////////////////////////////////
-console.log("************Start DB Connection************");
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log("************DB Authenticated************");
-    console.log("***Start Sync DB***");
-    sequelize.sync({logging:false}).then(()=>{
-      initAdminUser(db);
-      console.log("***DB Sync Finsh***");
-    });
-    console.log("********************************");
-  })
-  .catch((error) => {
-    console.log("************DB Error************");
-    const code = error.parent.code;
-    const errno = error.parent.errno;
-    const syscall = error.parent.syscall;
-    console.error("Error: \n errno:"+errno+"\n code:"+code+"\n syscall:"+syscall);
-    console.log("-Check IF DB IS RUNNIG");
-    console.log("-Check Auth Info Is Correct");
-    console.log("********************************");
-    return;
-  });
+//////////// DB Sync  ///////////////////////////////////////////////////////
+console.log("***Start Sync DB***");
+sequelize.sync({logging:false}).then(()=>{
+  initAdminUser(db);
+  console.log("***DB Sync Finsh***");
+});
+console.log("********************************");
 
 module.exports = db;
