@@ -24,7 +24,7 @@ const initAdminUser = async function(db){
         await db.User.create({
             UName:"Admin",
             UPassword: pass,
-            email:"admin@"+ process.env.APP_MAIL_DOMAIN,
+            email:"admin@al-akhbar.com",
             isEmailVerified:true,
             userPermissionId:1
         })

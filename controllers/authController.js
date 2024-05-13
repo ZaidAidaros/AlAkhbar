@@ -89,23 +89,19 @@ const logIn = async (req, res) => {
     } else {
       const secret = process.env.JWT_SECRET;
       if (user.phone === phoneEmail) {
-        const phoneToken =
-          "http://" +
-          process.env.APP_DOMAIN +
-          ":4444/api/auth/verify/?token=" +
+        const phoneTokenUrl = process.env.APP_DOMAIN +
+          "/api/auth/verify/?token=" +
           jwt.sign({ phoneEmail: user.phone }, secret, {
             expiresIn: "1h",
           });
-        sendVerificationOnPhone(req, res, user.phone, phoneToken);
+        sendVerificationOnPhone(req, res, user.phone, phoneTokenUrl);
       } else {
-        const emailToken =
-          "http://" +
-          process.env.APP_DOMAIN +
-          ":4444/api/auth/verify/?token=" +
+        const emailTokenUrl = process.env.APP_DOMAIN +
+          "/api/auth/verify/?token=" +
           jwt.sign({ phoneEmail: user.email }, secret, {
             expiresIn: "1h",
           });
-        sendVerificationOnEmail(req, res, user.email, emailToken);
+        sendVerificationOnEmail(req, res, user.email, emailTokenUrl);
       }
     }
   } catch (error) {
