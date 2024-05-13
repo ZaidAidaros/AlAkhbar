@@ -10,12 +10,12 @@ db.sequelize = sequelize;
 
 
 //////////// DB Test Connection  ///////////////////////////////////////////////////////
-console.log("************Start DB Connection************");
-sequelize
+
+const connIsOk = sequelize
   .authenticate()
   .then(() => {
     console.log("************DB Authenticated************");
-    
+    return true;
   })
   .catch((error) => {
     console.log("************DB Error************");
@@ -23,12 +23,9 @@ sequelize
     const errno = error.parent.errno;
     const syscall = error.parent.syscall;
     console.error("Error: \n errno:"+errno+"\n code:"+code+"\n syscall:"+syscall);
-    console.log("-Check IF DB IS RUNNIG");
-    console.log("-Check Auth Info Is Correct");
-    console.log("********************************");
-    return;
+    return false;
   });
-
+if (!connIsOk) return;
 
 //////////// DB Tables  ///////////////////////////////////////////////////////
 db.User = require("./user.js")(sequelize, DataTypes, Model);
@@ -104,11 +101,8 @@ db.Article.hasMany(db.UserBookMark);
 
 
 //////////// DB Sync  ///////////////////////////////////////////////////////
-console.log("***Start Sync DB***");
-sequelize.sync({logging:false}).then(()=>{
-  initAdminUser(db);
-  console.log("***DB Sync Finsh***");
-});
-console.log("********************************");
+
+sequelize.sync({logging:false});
+initAdminUser(db);
 
 module.exports = db;

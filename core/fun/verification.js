@@ -34,15 +34,18 @@ function sendVerificationOnEmail(req, res, email, emailTokenUrl) {
     destenation:email,
     verifyUrl:emailTokenUrl
   };
-  try {
-    sendMaile(emailMsg);
-  } catch (error) {
-    console.log(error)
-  }
-  return res.status(200).json({
-    status: "success",
-    isVerified: false,
-    message: "We Sent You An Email With Verify URL",
+  sendMaile(emailMsg).then(()=>{
+    return res.status(200).json({
+      state: true,
+      isVerified: false,
+      message: "We Sent You An Email With Verify URL",
+    });
+  }).catch((err)=>{
+    return res.status(500).json({
+      state: true,
+      isVerified: false,
+      message: err.message
+    });
   });
 }
 function sendVerificationOnPhone(req, res, phone, phoneTokenUrl) {
