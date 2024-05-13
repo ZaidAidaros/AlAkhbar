@@ -9,14 +9,8 @@ async function sendMaile(msg){
       }
   });
 
-  smtpTransport.sendMail(
-    {
-      from: process.env.MAILERID,
-      to : msg.destenation,
-      subject : msg.subject,
-      html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+msg.verifyUrl+">Click here to verify</a>" 
-  
-    }, 
+  const res = smtpTransport.sendMail(
+    msg, 
     function(error, response){
     if(error){
         return {state:false, msg:"Error:"+error};
@@ -24,19 +18,20 @@ async function sendMaile(msg){
       return {state: true, msg: response};
     }
   });
-
+return res;
 }
 
 
 function sendVerificationOnEmail(req, res, email, emailTokenUrl) {
   // empliment sending email with token url
   const emailMsg = {
-    subject:"Al-Akhbar Web App Email Verifiction",
-    destenation:email,
-    verifyUrl:emailTokenUrl
+      from: process.env.MAILERID,
+      to : email,
+      subject : "Al-Akhbar Web App Email Verifiction",
+      html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+ emailTokenUrl +">Click here to verify</a>" 
   };
   sendMaile(emailMsg).then((res)=>{
-console.log(res);
+    console.log(res);
     return res.status(200).json({
       state: true,
       isVerified: false,
@@ -56,7 +51,7 @@ function sendVerificationOnPhone(req, res, phone, phoneTokenUrl) {
   // empliment sending sms to phone with token url
   const emailMsg = `To Confirm your email click here: ${token} `;
   return res.status(200).json({
-    status: "success",
+    state: true,
     isVerified: false,
     emailMsg, //will delete it later
     message: "We Sent You An SMS With Verify URL",
