@@ -41,10 +41,11 @@ function sendVerificationOnEmail(req, res, email, emailTokenUrl) {
       message: "We Sent You An Email With Verify URL",
     });
   }).catch((err)=>{
+    console.error(err)
     return res.status(500).json({
       state: true,
       isVerified: false,
-      message: err.message
+      message:"Uknown Error..."
     });
   });
 }
