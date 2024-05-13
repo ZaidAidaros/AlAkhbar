@@ -15,6 +15,7 @@ async function sendMaile(msg){
     if(error){
         return {state:false, msg:"Error:"+error};
     }else{
+      console.log(response);
       return {state: true, msg: response};
     }
   });
