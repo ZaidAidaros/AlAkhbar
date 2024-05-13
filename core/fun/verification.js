@@ -19,9 +19,9 @@ async function sendMaile(msg){
     }, 
     function(error, response){
     if(error){
-        return {state:false,msg:"Error:"+error};
+        return {state:false, msg:"Error:"+error};
     }else{
-      return {state: true};
+      return {state: true, msg: response};
     }
   });
 
@@ -35,7 +35,8 @@ function sendVerificationOnEmail(req, res, email, emailTokenUrl) {
     destenation:email,
     verifyUrl:emailTokenUrl
   };
-  sendMaile(emailMsg).then(()=>{
+  sendMaile(emailMsg).then((res)=>{
+console.log(res);
     return res.status(200).json({
       state: true,
       isVerified: false,
@@ -50,6 +51,7 @@ function sendVerificationOnEmail(req, res, email, emailTokenUrl) {
     });
   });
 }
+
 function sendVerificationOnPhone(req, res, phone, phoneTokenUrl) {
   // empliment sending sms to phone with token url
   const emailMsg = `To Confirm your email click here: ${token} `;
