@@ -1,7 +1,7 @@
 
 async function sendMaile(msg){
   var nodemailer = require("nodemailer");
-  var smtpTransport = nodemailer.createTransport("SMTP",{
+  var smtpTransport = nodemailer.createTransport({
       service: process.env.MAILERNAME,
       auth: {
           user: process.env.MAILERID,
@@ -11,6 +11,7 @@ async function sendMaile(msg){
 
   smtpTransport.sendMail(
     {
+      from: process.env.MAILERID,
       to : msg.destenation,
       subject : msg.subject,
       html : "Hello,<br> Please Click on the link to verify your email.<br><a href="+msg.verifyUrl+">Click here to verify</a>" 

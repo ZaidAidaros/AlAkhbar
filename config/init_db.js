@@ -2,7 +2,7 @@
 const bcrypt = require('bcrypt');
 
 const initAdminUser = async function(db){
-    const user = await db.User.findOne({where:{ Id:1 }});
+    const user = await db.User.findOne({where:{ Id:1 }, attributes: ['UName','email']});
     if(!user){
         // create defualt admin user
         const pass = await bcrypt.hash("Admin123",10);
