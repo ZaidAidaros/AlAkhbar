@@ -28,6 +28,27 @@ const initAdminUser = async function(db){
             isEmailVerified:true,
             userPermissionId:1
         })
+        await db.User.create({
+            UName:"Zaid",
+            UPassword: await bcrypt.hash("Zaid123",10),
+            email:"zaid@gmail.com",
+            isEmailVerified:true,
+            userPermissionId:3
+        })
+        await db.User.create({
+            UName:"Ali",
+            UPassword: await bcrypt.hash("Ali123",10);,
+            email:"ali@gmail.com",
+            isEmailVerified:true,
+            userPermissionId:3
+        })
+        await db.User.create({
+            UName:"Ahmed",
+            UPassword: await bcrypt.hash("Ahmed123",10);,
+            email:"ahmed@gmail.com",
+            isEmailVerified:true,
+            userPermissionId:3
+        })
     }
 }
 
