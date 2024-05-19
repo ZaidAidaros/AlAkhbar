@@ -55,7 +55,7 @@ function sendVerificationOnPhone(req, res, phone, phoneTokenUrl) {
     state: true,
     isVerified: false,
     emailMsg, //will delete it later
-    message: "We Sent You An SMS With Verify URL",
+    message: "We Sent You An SMS With Verifiction Code",
   });
 }
 

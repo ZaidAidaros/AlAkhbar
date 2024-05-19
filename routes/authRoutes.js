@@ -6,13 +6,15 @@ const {
   resetPassword,
   verifyEmailPhone,
   foregetpassword,
+  emailVerifyByFirebase
 } = require("../controllers/authController");
-
-router.get("/logout", logOut);
-router.get("/verify", verifyEmailPhone);
-router.post("/login", logIn);
-router.post("/signup", signUp);
-router.post("/foregetpassword", foregetpassword);
-router.post("/resetpassword", resetPassword);
+const { apiAuthRoutes } = require("../core/api_routes");
+router.get(apiAuthRoutes.logOut, logOut);
+router.get(apiAuthRoutes.verifyEP, verifyEmailPhone);
+router.post(apiAuthRoutes.verifyEmailFire, emailVerifyByFirebase);
+router.post(apiAuthRoutes.logIn, logIn);
+router.post(apiAuthRoutes.signUp, signUp);
+router.post(apiAuthRoutes.foregetpassword, foregetpassword);
+router.post(apiAuthRoutes.resetpassword, resetPassword);
 
 module.exports = router;

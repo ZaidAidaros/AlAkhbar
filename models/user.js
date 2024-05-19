@@ -8,8 +8,12 @@ module.exports = (sequelize, DataTypes, Model) => {
         primaryKey: true,
         autoIncrement: true,
       },
+      uid: {//firebase
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
       UName: {
-        type: DataTypes.STRING(15),
+        type: DataTypes.STRING,
         allowNull: false,
       },
       UPassword: {
@@ -17,18 +21,20 @@ module.exports = (sequelize, DataTypes, Model) => {
         allowNull: false,
       },
       email: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING,
         unique: true,
       },
       isEmailVerified: {
         type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
       phone: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING,
         unique: true,
       },
       isPhoneVerified: {
         type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
       isStoped: {
         type: DataTypes.BOOLEAN,

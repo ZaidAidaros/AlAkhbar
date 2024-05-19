@@ -1,10 +1,11 @@
+
+const { config } = require("dotenv");
+config();
 const express = require("express");
-// const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const path = require('path');
 const app = express();
-const { config } = require("dotenv");
-config();
+
 
 const port = process.env.SERVER_PORT || "3000";
 const host = process.env.SERVER_HOST || "127.0.0.1";
@@ -20,14 +21,19 @@ const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const writterRoutes = require("./routes/writterRoutes");
 const homeRoutes = require("./routes/homeRoutes");
+
 // Uses
-// const orgPort = 3000
-// app.use(cors({ origin: "http://localhost:"+orgPort, credentials: true }));
+
+const cors = require("cors");
+const orgPort = 3000
+app.use(cors({ origin: "http://localhost:"+orgPort, credentials: true }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use("/api/auth", authRoutes);
+const {apiAuthRoutes} = require("./core/api_routes");
+app.use(apiAuthRoutes.main, authRoutes);
 app.use("/api/articles-imgs/", express.static("./public/articles_images/"));
 app.use("/api/home/", homeRoutes);
 app.use("/api/user", isAuthenticated, userRoutes);
@@ -36,7 +42,7 @@ app.use("/api/admin", isAuthenticated, isAdmin, adminRoutes);
 
 
 app.use("/api/*", (req, res) =>
-  res.status(200).json({ state: false, message: "Not Found 404..." })
+  res.status(404).json({ state: false, message: "Not Found 404..." })
 );
 
 // UI APP Serving

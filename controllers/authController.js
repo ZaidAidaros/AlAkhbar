@@ -2,10 +2,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { Sequelize } = require("sequelize");
 const { User, UserPermission, Writter } = require("../models");
-const {
-  sendVerificationOnEmail,
-  sendVerificationOnPhone,
-} = require("../core/fun/verification");
+const {createUserOnFirebase,userVerification} = require("../core/firebase_admin/auth");
 
 const signUp = async (req, res) => {
   try {
@@ -14,14 +11,19 @@ const signUp = async (req, res) => {
     const user = await User.create({
       ...req.body,
       UPassword: hashedPassword,
-      isEmailVerified: false, //temp
       userPermissionId: 3,
     });
 
+    const {state,result} = await createUserOnFirebase(req.body.email,req.body.phone,req.body.password);
+    if(state){
+      user.uid=result.uid;
+      await user.save();
+    }
     res.status(200).json({
       state: true,
-      message: "Signed Up Successfuly...",
+      message: "Signed Up Successfuly..."
     });
+
   } catch (error) {
     if (error instanceof Sequelize.UniqueConstraintError) {
       res.status(409).json({ state: false, message: "Already exists." });
@@ -87,22 +89,25 @@ const logIn = async (req, res) => {
         token,
       });
     } else {
-      const secret = process.env.JWT_SECRET;
       if (user.phone === phoneEmail) {
-        const phoneTokenUrl = process.env.APP_DOMAIN +
-          "/api/auth/verify/?token=" +
-          jwt.sign({ phoneEmail: user.phone }, secret, {
-            expiresIn: "1h",
+        return res.status(200).json({
+            state: true,
+            isVerified: false,
+            message: "We Sent You SMS Code",
           });
-        sendVerificationOnPhone(req, res, user.phone, phoneTokenUrl);
+        
       } else {
-        const emailTokenUrl = process.env.APP_DOMAIN +
-          "/api/auth/verify/?token=" +
-          jwt.sign({ phoneEmail: user.email }, secret, {
-            expiresIn: "1h",
-          });
-        sendVerificationOnEmail(req, res, user.email, emailTokenUrl);
+        
+        return res.status(200).json({
+          state: true,
+          isVerified: false,
+          message: "We Sent You An Email With Verify URL",
+        });
+        
+        
+        
       }
+      
     }
   } catch (error) {
     console.log(error);
@@ -165,9 +170,8 @@ const foregetpassword = async (req, res) => {
     if (user.phone === phoneEmail) {
       const phoneToken =
         "To Reset Your Password Click This URL " +
-        "http://" +
         process.env.APP_DOMAIN +
-        ":3000/resetpassword?token=" +
+        "/resetpassword?token=" +
         jwt.sign({ phoneEmail: user.phone }, secret, {
           expiresIn: "1h",
         });
@@ -175,9 +179,8 @@ const foregetpassword = async (req, res) => {
     } else {
       const emailToken =
         "To Reset Your Password Click This URL " +
-        "http://" +
         process.env.APP_DOMAIN +
-        ":3000/resetpassword?token=" +
+        "/resetpassword?token=" +
         jwt.sign({ phoneEmail: user.email }, secret, {
           expiresIn: "1h",
         });
@@ -262,6 +265,16 @@ const resetPassword = async (req, res) => {
     res.status(500).json({ state: false, message: error.message });
   }
 };
+const emailVerifyByFirebase = async function(req,res){
+  console.log("-------firebase---body----");
+  console.log(req.body);
+  const {state,result} = userVerification(req.body.idToken,req.body.uid)
+  console.log("---------------------------");
+  console.log(result);
+  return res
+        .status(200)
+        .json({ state: true, message: "Password Updated Successfuly" });
+}
 
 module.exports = {
   logIn,
@@ -271,4 +284,5 @@ module.exports = {
   resetPassword,
   foregetpassword,
   verifyEmailPhone,
+  emailVerifyByFirebase,
 };
