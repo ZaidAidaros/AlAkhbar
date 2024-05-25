@@ -1,6 +1,7 @@
 const { User, Writter } = require("../models");
-const { Sequelize } = require("sequelize");
+const { Sequelize, where } = require("sequelize");
 const bcrypt = require("bcrypt");
+const {updateFireUser,deleteFireUser} = require("../core/firebase_admin/auth");
 
 const getCurrentUser = (req, res) => {
   try {
@@ -101,21 +102,28 @@ const updateUser = async (req, res) => {
       updateData.oldPassword,
       user.UPassword
     );
-    delete updateData.oldPassword;
-    delete updateData.newPassword;
+    
+    let fireuser = {};
     if (validPassword) {
       if (updateData.email) {
         updateData.isEmailVerified = false;
+        fireuser.email = updateData.email;
       }
       if (updateData.phone) {
         updateData.isPhoneVerified = false;
+        fireuser.phoneNumber = updateData.phone;
       }
+      if(updateData.newPassword){
+        fireuser.password=updateData.newPassword;
+      }
+      delete updateData.oldPassword;
+      delete updateData.newPassword;
       user.update(updateData);
-      user.save().then(() => {
-        res
-          .status(200)
-          .json({ state: true, message: "User Info Updated Successfuly" });
-      });
+      await user.save();
+      if(fireuser){
+        await updateFireUser(user.uid,fireuser);
+      }
+      res.status(200).json({ state: true, message: "User Info Updated Successfuly" });
     } else {
       res.status(400).json({
         state: true,
@@ -130,13 +138,17 @@ const updateUser = async (req, res) => {
 const deleteUser = async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    await User.destroy({
+    const user = await User.findOne({
       where: {
         Id: req.user.Id,
         UPassword: hashedPassword,
       },
-    });
-
+    attributes: ["Id", "uid"],
+  });
+    if(user){
+      await deleteFireUser(user.uid);
+    }
+    await User.destroy({where:{Id:req.user.Id}});
     res.status(200).json({ state: true, message: "User deleted successfully" });
   } catch (error) {
     res.status(500).json({ state: false, message: error.message });

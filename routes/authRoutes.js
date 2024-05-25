@@ -1,20 +1,20 @@
 const router = require("express").Router();
 const {
   logIn,
-  logOut,
   signUp,
   resetPassword,
   verifyEmailPhone,
+  verifyEmailPhoneByFirebase,
+  resetPasswordByFirebase,
   foregetpassword,
-  emailVerifyByFirebase
 } = require("../controllers/authController");
 const { apiAuthRoutes } = require("../core/api_routes");
-router.get(apiAuthRoutes.logOut, logOut);
 router.get(apiAuthRoutes.verifyEP, verifyEmailPhone);
-router.post(apiAuthRoutes.verifyEmailFire, emailVerifyByFirebase);
+router.get(apiAuthRoutes.verifyEPByFire, verifyEmailPhoneByFirebase);
 router.post(apiAuthRoutes.logIn, logIn);
 router.post(apiAuthRoutes.signUp, signUp);
 router.post(apiAuthRoutes.foregetpassword, foregetpassword);
 router.post(apiAuthRoutes.resetpassword, resetPassword);
+router.post(apiAuthRoutes.resetpasswordByFire, resetPasswordByFirebase);
 
 module.exports = router;

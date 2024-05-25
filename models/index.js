@@ -102,7 +102,13 @@ db.Article.hasMany(db.UserBookMark);
 
 //////////// DB Sync  ///////////////////////////////////////////////////////
 
-sequelize.sync({force:true,logging:false});
-initAdminUser(db);
+sequelize.sync({
+  // force:true,
+  logging:false
+}).then(()=>{
+  initAdminUser(db);
+});
+
+
 
 module.exports = db;

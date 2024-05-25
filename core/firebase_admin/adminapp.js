@@ -1,7 +1,6 @@
-var admin = require("firebase-admin");
+const admin = require("firebase-admin");
 
-var firebaseServiceAccount = require("./alakhbar-web-app-firebase-adminsdk");
-
+const firebaseServiceAccount = require("./alakhbarFirebseServiceAccount");
 const fireApp = admin.initializeApp({
   credential: admin.credential.cert(firebaseServiceAccount)
 });

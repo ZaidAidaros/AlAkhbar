@@ -3,15 +3,14 @@ const homeController = require("../controllers/homeController");
 const {
   getArticleCategories,
 } = require("../controllers/articleCategoryController");
+const {apiHomeRoutes} = require("../core/api_routes");
 
-router.get("/articles-categories", getArticleCategories);
+router.get(apiHomeRoutes.homeArticleCategory, getArticleCategories);
+router.get(apiHomeRoutes.homeArticles, homeController.getCategArticles);
+router.get(apiHomeRoutes.homeArticlesSearch, homeController.search);
+router.get(apiHomeRoutes.homeArticleById, homeController.getArticleById);
+router.get(apiHomeRoutes.homeArticleComments, homeController.getArticleComments);
 
-router.get("/articles", homeController.getCategArticles);
-router.get("/articles/search", homeController.search);
-router.get("/articles/:id", homeController.getArticleById);
-
-router.get("/articles-comments", homeController.getArticleComments);
-
-router.post("/feedback", homeController.feedback);
+router.post(apiHomeRoutes.feedback, homeController.feedback);
 
 module.exports = router;
