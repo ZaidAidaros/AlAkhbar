@@ -1,5 +1,4 @@
 const {
-  User,
   Writter,
   Article,
   ArticleCategory,
@@ -26,7 +25,6 @@ const getWritterProfile = async (req, res) => {
 };
 const getWritterArticles = async (req, res) => {
   try {
-    console.log(req.query);
     const published = req.query.published === "true" ? true : false;
     const page = Number.parseInt(req.query.page);
     const configSelect = {
@@ -48,13 +46,10 @@ const getWritterArticles = async (req, res) => {
         },
       ],
     };
-    console.log("****", page);
     if (page) {
-      console.log("****", page);
       const articles = await Article.findAll(configSelect);
       res.status(200).json({ state: true, articles });
     } else {
-      console.log("****", page);
       const { count, rows } = await Article.findAndCountAll(configSelect);
       res.status(200).json({ state: true, articles: rows, count });
     }

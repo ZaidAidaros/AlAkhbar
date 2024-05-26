@@ -8,7 +8,6 @@ const {
 } = require("../models");
 const { addVisterMsg } = require("./vister_msgController.js");
 const { Op } = require("sequelize");
-// const { Sequelize } = require("sequelize");
 
 const getArticleById = async (req, res) => {
   try {
