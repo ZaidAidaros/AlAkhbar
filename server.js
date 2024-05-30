@@ -47,10 +47,10 @@ app.use("/api/*", (req, res) =>
 
 // UI APP Serving
 // Serve static files from the "ui" directory
-app.use(express.static(path.join(__dirname, 'ui')));
+app.use(express.static(path.join(__dirname, 'public')));
 // Serve ui routes
 app.get('*', (req, res) => {
-  const pth = path.join(__dirname, 'ui', 'index.html');
+  const pth = path.join(__dirname, 'public', 'index.html');
   res.sendFile(pth);
 });
 
