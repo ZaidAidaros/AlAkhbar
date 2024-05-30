@@ -4,20 +4,16 @@ const path = require("path");
 
 const articleImgStorage = multer.diskStorage({
   destination: function (req, img, cb) {
-    const dest =
-      path.dirname(__dirname) +
-      path.sep +
-      "public" +
-      path.sep +
-      "articles_images";
+    const dest =path.join( path.dirname(__dirname),"public","articles_images");
     return cb(null, dest);
   },
   filename: function (req, img, cb) {
     const art = JSON.parse(req.body.article);
 
     const imgName =
-      art.title + "_" + Date.now() + path.extname(img.originalname);
+      art.title.replace(" ","") + "_" + img.fieldname +"_" + Date.now() + path.extname(img.originalname);
     req.body.article = art;
+    console.log(imgName)
     return cb(null, imgName);
   },
 });
@@ -31,7 +27,7 @@ const addArticle = async (req, res) => {
     let image = "";
     let article = null;
     if (req.file) {
-      image = "articles-imgs/" + req.file.filename;
+      image = "/imgs/articles-imgs/" + req.file.filename;
       article = req.body.article;
     } else {
       article = JSON.parse(req.body.article);

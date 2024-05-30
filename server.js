@@ -39,7 +39,7 @@ app.use(apiHomeRoutes.root, homeRoutes);
 app.use("/api/user", isAuthenticated, userRoutes);
 app.use("/api/writter", isAuthenticated, isWritter, writterRoutes);
 app.use("/api/admin", isAuthenticated, isAdmin, adminRoutes);
-app.use("/api/articles-imgs/", express.static("./public/articles_images/"));
+app.use("/imgs/articles-imgs/", express.static("./public/articles_images/"));
 
 app.use("/api/*", (req, res) =>
   res.status(404).json({ state: false, message: "Not Found 404..." })

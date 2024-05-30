@@ -314,7 +314,7 @@ const updateWritter = async (req, res) => {
 const updateWArticle = async (req, res) => {
   try {
     const { Id, isStoped } = req.body;
-    console.log(req.body);
+    console.log({ isStoped, published:!isStoped })
     const resualt = await db.Article.update({ isStoped }, { where: { Id } });
     if (resualt[0]) {
       res
