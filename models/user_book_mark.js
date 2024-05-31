@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes, Model) => {
       sequelize,
       modelName: "userBookMark",
       tableName: "userBookMarks",
+      indexes: [{ unique: true, fields: ["userId", "articleId"] }],
     }
   );
   return UserBookMark;
