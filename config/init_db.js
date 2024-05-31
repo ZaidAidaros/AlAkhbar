@@ -50,6 +50,13 @@ const initAdminUser = async function(db){
             isEmailVerified:true,
             userPermissionId:3
         });
+        //
+        await db.ArticleCategory.create({name:"Poltic News",description:"Poltic News"});
+        await db.ArticleCategory.create({name:"Economec News",description:"Economec News"});
+        await db.ArticleCategory.create({name:"Wars News",description:"Wars News"});
+        await db.ArticleCategory.create({name:"Space News",description:"Space News"});
+        await db.ArticleCategory.create({name:"Sience News",description:"Sience News"});
+
     }
 }
 

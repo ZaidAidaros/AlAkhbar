@@ -286,7 +286,6 @@ const updateWritter = async (req, res) => {
     const { Id, userId } = req.body;
     delete req.body.userId;
     delete req.body.Id;
-    console.log(req.body);
     if (req.body.isApproved || req.body.isStoped) {
       req.body.notification = null;
     }

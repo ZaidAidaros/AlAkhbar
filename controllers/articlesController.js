@@ -13,7 +13,6 @@ const articleImgStorage = multer.diskStorage({
     const imgName =
       art.title.replace(" ","") + "_" + img.fieldname +"_" + Date.now() + path.extname(img.originalname);
     req.body.article = art;
-    console.log(imgName)
     return cb(null, imgName);
   },
 });
