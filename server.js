@@ -48,12 +48,12 @@ app.use("/api/*", (req, res) =>
 
 app.use("/imgs/articles-imgs/", express.static(path.join(__dirname, 'public','articles_images')));
 
-// app.use(express.static(path.join(__dirname, 'public','ui')));
-// // Serve ui routes
-// app.get('*', (req, res) => {
-//   const pth = path.join(__dirname, 'public','ui', 'index.html');
-//   res.sendFile(pth);
-// });
+app.use(express.static(path.join(__dirname, 'public','ui')));
+// Serve ui routes
+app.get('*', (req, res) => {
+  const pth = path.join(__dirname, 'public','ui', 'index.html');
+  res.sendFile(pth);
+});
 
 app.listen(port, host, () =>
   console.log("Server is Running on: http://" + host + ":" + port)
