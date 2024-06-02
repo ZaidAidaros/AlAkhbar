@@ -51,11 +51,11 @@ const initAdminUser = async function(db){
             userPermissionId:3
         });
         //
-        await db.ArticleCategory.create({name:"Poltic News",description:"Poltic News"});
-        await db.ArticleCategory.create({name:"Economec News",description:"Economec News"});
-        await db.ArticleCategory.create({name:"Wars News",description:"Wars News"});
-        await db.ArticleCategory.create({name:"Space News",description:"Space News"});
-        await db.ArticleCategory.create({name:"Sience News",description:"Sience News"});
+        await db.ArticleCategory.create({arName:"أخبار سياسية",arDescription:"أخبار سياسية",enName:"Poltic News",enDescription:"Poltic News"});
+        await db.ArticleCategory.create({arName:"أخبار اقتصادية",arDescription:"أخبار اقتصادية",enName:"Economec News",enDescription:"Economec News"});
+        await db.ArticleCategory.create({arName:"أخبار الحروب",arDescription:"أخبار الحروب",enName:"Wars News",enDescription:"Wars News"});
+        await db.ArticleCategory.create({arName:"أخبار الفضاء",arDescription:"أخبار الفضاء",enName:"Space News",enDescription:"Space News"});
+        await db.ArticleCategory.create({arName:"أخبار علمية",arDescription:"أخبار علمية",enName:"Sience News",enDescription:"Sience News"});
 
     }
 }

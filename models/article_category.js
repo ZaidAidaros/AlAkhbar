@@ -8,11 +8,19 @@ module.exports = (sequelize, DataTypes, Model) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      name: {
+      arName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      description: {
+      arDescription: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      enName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      enDescription: {
         type: DataTypes.STRING,
         allowNull: false,
       },

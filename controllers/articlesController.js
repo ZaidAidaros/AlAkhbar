@@ -26,7 +26,7 @@ const addArticle = async (req, res) => {
     let image = "";
     let article = null;
     if (req.file) {
-      image = "/imgs/articles-imgs/" + req.file.filename;
+      image = process.env.APP_DOMAIN + "/imgs/articles-imgs/" + req.file.filename;
       article = req.body.article;
     } else {
       article = JSON.parse(req.body.article);
