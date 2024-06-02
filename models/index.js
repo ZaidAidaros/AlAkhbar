@@ -1,7 +1,6 @@
 const dbConfig = require("../config/db_config.js");
 const initAdminUser = require("../config/init_db.js");
-const { Sequelize, DataTypes, Model, json } = require("sequelize");
-
+const { Sequelize, DataTypes, Model } = require("sequelize");
 
 const sequelize = new Sequelize(dbConfig[process.env.MODE]);
 
@@ -28,6 +27,7 @@ const connIsOk = sequelize
 if (!connIsOk) return;
 
 //////////// DB Tables  ///////////////////////////////////////////////////////
+
 db.User = require("./user.js")(sequelize, DataTypes, Model);
 
 db.UserPermission = require("./user_permission.js")(
