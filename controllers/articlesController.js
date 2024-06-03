@@ -32,7 +32,6 @@ const addArticle = async (req, res) => {
       article = JSON.parse(req.body.article);
     }
     const published = article.published && !req.user.isWritterStoped;
-    console.log(article);
     await Article.create({
       ...article,
       image,

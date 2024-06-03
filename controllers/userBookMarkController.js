@@ -1,8 +1,8 @@
+const { where } = require("sequelize");
 const { 
   UserBookMark, 
   Article, 
   Writter,
-  ArticleComment,
   ArticleLike
 } = require("../models");
 
@@ -46,14 +46,16 @@ const getUserBookMarks = async (req, res) => {
 
 const addUserBookMark = async (req, res) => {
   try {
-    const userBookMark = await UserBookMark.create({userId: req.user.Id,articleId:req.body.articleId});
+    const [userBookMark, created] = await UserBookMark.findOrCreate({where:{userId: req.user.Id, articleId:req.body.articleId}});
     res
       .status(201)
-      .json({ state: true, message: "Book Mark Added Successfuly", userBookMark});
-  } catch (err) {
-    res.status(500).json({ state: false, message: err.message });
+      .json({ state: true, message: "Article Saved Successfuly", userBookMark});
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ state: false, message: error.message });
   }
 };
+
 const deleteUserBookMark = async (req, res) => {
   try {
     const result = await UserBookMark.destroy({
