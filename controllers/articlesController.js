@@ -1,6 +1,7 @@
 const { Article } = require("../models");
 const multer = require("multer");
 const path = require("path");
+// const imgprocess = require("../core/obj_detection_service");
 
 const articleImgStorage = multer.diskStorage({
   destination: function (req, img, cb) {
