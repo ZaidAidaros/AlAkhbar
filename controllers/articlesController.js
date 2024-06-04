@@ -10,8 +10,7 @@ const articleImgStorage = multer.diskStorage({
   filename: function (req, img, cb) {
     const art = JSON.parse(req.body.article);
 
-    const imgName =
-      art.title.replace(" ","") + "_" + img.fieldname +"_" + Date.now() + path.extname(img.originalname);
+    const imgName = art.Id + "_org_" + img.fieldname +"_" + Date.now() + path.extname(img.originalname);
     req.body.article = art;
     return cb(null, imgName);
   },
