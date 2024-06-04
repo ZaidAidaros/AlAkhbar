@@ -242,7 +242,7 @@ const getWArticles = async (req, res) => {
         include: [
           {
             model: db.ArticleCategory,
-            attributes: ["name"],
+            attributes: ["enName","arName"],
           },
           {
             model: db.ArticleComment,
@@ -263,7 +263,7 @@ const getWArticles = async (req, res) => {
         include: [
           {
             model: db.ArticleCategory,
-            attributes: ["name"],
+            attributes: ["enName","arName"],
           },
           {
             model: db.ArticleComment,

@@ -10,12 +10,12 @@ router.get("/users/search", adminController.usersSearch);
 router.put("/users", adminController.updateUser);
 router.delete("/users/:id", adminController.deleteUser);
 
-router.get("/writters", adminController.getWritters);
-router.get("/writters/search", adminController.writtersSearch);
-router.get("/writters/articles", adminController.getWArticles);
-router.put("/writters", adminController.updateWritter);
-router.put("/writters/articles", adminController.updateWArticle);
-router.delete("/writters/:id", adminController.deleteWritter);
+router.get("/writers", adminController.getWritters);
+router.get("/writers/search", adminController.writtersSearch);
+router.get("/writers/articles", adminController.getWArticles);
+router.put("/writers", adminController.updateWritter);
+router.put("/writers/articles", adminController.updateWArticle);
+router.delete("/writers/:id", adminController.deleteWritter);
 
 router.get("/visters-msgs", viste_msgController.getVistersMsgs);
 // router.get("/visters-msgs/:id", viste_msgController.getVisterMsg);
