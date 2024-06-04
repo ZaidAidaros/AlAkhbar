@@ -1,5 +1,4 @@
 const db = require("../models");
-const bcrypt = require("bcrypt");
 
 const getAllSubscribers = async (req, res) => {
   try {

@@ -1,5 +1,5 @@
 const { User, Writter } = require("../models");
-const { Sequelize, where } = require("sequelize");
+const { Sequelize } = require("sequelize");
 const bcrypt = require("bcrypt");
 const {updateFireUser,deleteFireUser} = require("../core/firebase_admin/auth");
 

@@ -35,7 +35,7 @@ const getWritterArticles = async (req, res) => {
       include: [
         {
           model: ArticleCategory,
-          attributes: ["name"],
+          attributes: ["enName","arName"],
         },
         {
           model: ArticleComment,
@@ -53,8 +53,9 @@ const getWritterArticles = async (req, res) => {
       const { count, rows } = await Article.findAndCountAll(configSelect);
       res.status(200).json({ state: true, articles: rows, count });
     }
-  } catch (err) {
-    res.status(500).json({ state: false, message: err.message });
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ state: false, message: error.message });
   }
 };
 

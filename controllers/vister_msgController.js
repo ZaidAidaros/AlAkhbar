@@ -1,6 +1,4 @@
 const { VisterMsg } = require("../models");
-const multer = require("multer");
-const path = require("path");
 
 const getVistersMsgs = async (req, res) => {
   try {
